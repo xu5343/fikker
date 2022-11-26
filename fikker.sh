@@ -8,5 +8,13 @@ unzip fikker.zip
 chmod -R 777 ../fikker
 bash fikkerd.sh install
 bash fikkerd.sh start
-echo "0 */8 * * * /etc/init.d/fikkerd restart " >>/etc/crontab
+echo "添加定时任务：每8小时重启fikker服务定时任务"
+# 判断文件夹是否存在
+if [ ! -e /var/spool/cron/ ];then
+mkdir -p /var/spool/cron/
+fi
+# 添加定时任务：每8小时重启fikker服务
+if [ `grep -v '^\s*#' /var/spool/cron/root |grep -c '/data/socket'` -eq 0 ];then
+echo "0 */8 * * * /etc/init.d/fikkerd restart"  >> /var/spool/cron/root
+fi
 echo "登录 Fikker 管理后台：http://your-fikker-ip:1988/，管理员的初始密码：123456" 
