@@ -17,4 +17,6 @@ fi
 if [ `grep -v '^\s*#' /var/spool/cron/root |grep -c '/data/socket'` -eq 0 ];then
 echo "0 */8 * * * /etc/init.d/fikkerd restart"  >> /var/spool/cron/root
 fi
+echo "检查crontab定时任务增加情况"
+crontab -l
 echo "登录 Fikker 管理后台：http://your-fikker-ip:1988/，管理员的初始密码：123456" 
