@@ -8,3 +8,6 @@ unzip fikker.zip
 chmod -R 777 ../fikker
 bash fikkerd.sh install
 bash fikkerd.sh start
+echo "设置每8小时重启fikker防止无法缓存问题" 
+echo "0 */8 * * * /etc/init.d/fikkerd restart " >>/etc/crontab
+echo "后台地址:http://ip:1988,密码:123456" 
