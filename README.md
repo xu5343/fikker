@@ -7,7 +7,6 @@
 wget --no-check-certificate https://raw.githubusercontent.com/xu5343/fikker/main/fikker.sh && bash fikker.sh
 ```  
 # 相关命令
-```
 a、停止 Fikker 程序的一键脚本：
 
 ```
