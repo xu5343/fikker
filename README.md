@@ -23,7 +23,8 @@ service fikkerd restart ; sleep 5 ; echo 'finished!'
 d、完全卸载/完全删除 Fikker 程序的一键脚本（默认安装在 /root 目录下面）：、
 
 ```
-cd /root && cd fikker && ./fikkerd.sh stop 2> /dev/null ; sleep 2 ; ./fikkerd.sh uninstall ; cd /root && rm -rf fikker && echo 'finished!'
+	
+cd /root && cd fikkerd-3.?.?-linux-x86-?? && ./fikkerd.sh stop 2> /dev/null ; sleep 2 ; ./fikkerd.sh uninstall ; cd /root && rm -rf fikkerd-3.?.?-linux-x86-?? && echo 'finished!'
 ```  
 最后破解不彻底的解决办法 ,没8个小时重启一下fikker
 
